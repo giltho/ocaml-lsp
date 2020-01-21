@@ -19,4 +19,4 @@ jobs:
     - run: opam depext -yt ocaml-lsp-server
     - run: opam install -t . --deps-only
     - run: opam exec -- make build
-    - run: opam exec -- make test
+    - run: make test
