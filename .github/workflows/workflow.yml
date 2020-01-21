@@ -11,6 +11,7 @@ jobs:
         ocaml-version: [ '4.09.0', '4.08.1', '4.07.1', '4.06.1' ]
     steps:
     - uses: actions/checkout@master
+    - uses: actions/setup-node@v1.1.0
     - uses: avsm/setup-ocaml@master
       with:
         ocaml-version: ${{ matrix.ocaml-version }}
@@ -18,3 +19,4 @@ jobs:
     - run: opam depext -yt ocaml-lsp-server
     - run: opam install -t . --deps-only
     - run: opam exec -- make build
+    - run: opam exec -- make test
