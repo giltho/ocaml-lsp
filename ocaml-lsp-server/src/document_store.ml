@@ -2,7 +2,7 @@ open! Import
 
 type t = (Lsp.Protocol.documentUri, Document.t) Hashtbl.t
 
-let make () = 3
+let make () = Hashtbl.create 50
 
 let put store doc = Hashtbl.replace store (Document.uri doc) doc
 
