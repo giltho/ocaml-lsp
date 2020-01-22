@@ -18,6 +18,5 @@ jobs:
     - run: opam pin add ocaml-lsp-server.dev -n .
     - run: opam depext -yt ocaml-lsp-server
     - run: opam install -t . --deps-only
-    - run: opam exec -- dune build
-    - run: opam exec -- dune build @install
+    - run: opam exec -- dune build @all
     - run: opam exec -- make test
